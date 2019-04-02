@@ -1,0 +1,7 @@
+C:\Users\tayl\Documents\Nesne\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\bin\Release\DosyadakiHakikat.exe.config
+C:\Users\tayl\Documents\Nesne\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\bin\Release\DosyadakiHakikat.exe
+C:\Users\tayl\Documents\Nesne\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\bin\Release\DosyadakiHakikat.pdb
+C:\Users\tayl\Documents\Nesne\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\obj\Release\DosyadakiHakikat.csproj.CoreCompileInputs.cache
+C:\Users\tayl\Documents\Nesne\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\obj\Release\DosyadakiHakikat.exe
+C:\Users\tayl\Documents\Nesne\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\obj\Release\DosyadakiHakikat.pdb
+C:\Users\tayl\Documents\Nesne\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\obj\Release\DosyadakiHakikat.csprojAssemblyReference.cache
