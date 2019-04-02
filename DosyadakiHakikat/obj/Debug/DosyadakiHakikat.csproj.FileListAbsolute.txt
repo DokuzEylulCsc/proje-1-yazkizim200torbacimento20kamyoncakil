@@ -1,0 +1,7 @@
+C:\Users\furka\Source\Repos\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\bin\Debug\DosyadakiHakikat.exe.config
+C:\Users\furka\Source\Repos\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\bin\Debug\DosyadakiHakikat.exe
+C:\Users\furka\Source\Repos\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\bin\Debug\DosyadakiHakikat.pdb
+C:\Users\furka\Source\Repos\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\obj\Debug\DosyadakiHakikat.csprojAssemblyReference.cache
+C:\Users\furka\Source\Repos\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\obj\Debug\DosyadakiHakikat.csproj.CoreCompileInputs.cache
+C:\Users\furka\Source\Repos\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\obj\Debug\DosyadakiHakikat.exe
+C:\Users\furka\Source\Repos\proje-1-yazkizim200torbacimento20kamyoncakil\DosyadakiHakikat\obj\Debug\DosyadakiHakikat.pdb
