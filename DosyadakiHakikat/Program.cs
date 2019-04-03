@@ -12,7 +12,6 @@ namespace DosyadakiHakikat
         static void Main(string[] args)
         {
             string dosyaAdi = args.Length > 0 ? args[0] : null;
-
             // Geçerli bir dosya adı alana kadar dosya adı iste
             while (!File.Exists(dosyaAdi))
             {
