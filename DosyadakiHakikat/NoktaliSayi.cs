@@ -8,7 +8,20 @@ namespace DosyadakiHakikat
 {
     class NoktaliSayi : Sayi
     {
-        public override List<object> sayi { get; set; } = new List<object>();
+        protected override List<string> sayi { get; set; } = new List<string>();
+
+        public override int adet
+        {
+            get
+            {
+                return sayi.Count;
+            }
+        }
+
+        public override void Ekle(string gelen)
+        {
+            sayi.Add(gelen);
+        }
 
         public override bool Check(string s)
         {

@@ -85,17 +85,17 @@ namespace DosyadakiHakikat
             while (!logMode && (s = sr.ReadLine()) != null)
             {
                 girdiAdedi++;
-                if (noktaliSayi.Check(s)) noktaliSayi.sayi.Add(s);
-                if (tamSayi.Check(s)) tamSayi.sayi.Add(s);
+                if (noktaliSayi.Check(s)) noktaliSayi.Ekle(s);
+                if (tamSayi.Check(s)) tamSayi.Ekle(s);
             }
 
             if (!logMode)
             {
                 Console.WriteLine("Toplam Satır Adedi: " + girdiAdedi);
-                Console.WriteLine($"Geçerli Sayi Adedi: {tamSayi.sayi.Count + noktaliSayi.sayi.Count}" + 
-                    $"(%{100*(tamSayi.sayi.Count + noktaliSayi.sayi.Count)/girdiAdedi})");
-                Console.WriteLine($"Geçersiz Satır Adedi: {girdiAdedi - tamSayi.sayi.Count + noktaliSayi.sayi.Count}" +
-                    $"(%{100 - (100 * (tamSayi.sayi.Count + noktaliSayi.sayi.Count) / girdiAdedi)})");
+                Console.WriteLine($"Geçerli Sayi Adedi: {tamSayi.adet + noktaliSayi.adet}" + 
+                    $"(%{100*(tamSayi.adet + noktaliSayi.adet) /girdiAdedi})");
+                Console.WriteLine($"Geçersiz Satır Adedi: {girdiAdedi - tamSayi.adet - noktaliSayi.adet }" +
+                    $"(%{100 - (100 * (tamSayi.adet + noktaliSayi.adet ) / girdiAdedi)})");
             }
             Log("Program " + DateTime.Now.ToString() + " Tarihinde Sonlandı\n-----------------------------------------\n");
             Console.WriteLine("Program Bitti Çıkmak İçin Enter'e Basınız");

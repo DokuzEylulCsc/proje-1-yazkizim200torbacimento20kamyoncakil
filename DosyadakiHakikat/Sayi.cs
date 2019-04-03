@@ -8,8 +8,12 @@ namespace DosyadakiHakikat
 {
     abstract class Sayi
     {
-        public abstract List<object> sayi { get; set; }
+        protected abstract List<string> sayi { get; set; }
 
         public abstract bool Check(string s);
+
+        public abstract void Ekle(string gelen);
+
+        public abstract int adet { get; }
     }
 }
