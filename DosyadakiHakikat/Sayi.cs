@@ -9,5 +9,7 @@ namespace DosyadakiHakikat
     abstract class Sayi
     {
         public abstract List<object> sayi { get; set; }
+
+        public abstract bool Check(string s);
     }
 }

@@ -15,6 +15,9 @@ namespace DosyadakiHakikat
             bool dosyaGecerliMi = false;
             bool logMode = false;
             string dosyaAdi;
+            int girdiAdedi = 0;
+            TamSayi tamSayi = new TamSayi();
+            NoktaliSayi noktaliSayi = new NoktaliSayi();
 
             void Log(string mesaj)
             {
@@ -76,8 +79,24 @@ namespace DosyadakiHakikat
 
             //Logun Ekrana Yazdırılması
             string s;
-            while ((s = sr.ReadLine()) != null && logMode) Console.WriteLine(s);
+            while (logMode && (s = sr.ReadLine()) != null) Console.WriteLine(s);
 
+
+            while (!logMode && (s = sr.ReadLine()) != null)
+            {
+                girdiAdedi++;
+                if (noktaliSayi.Check(s)) noktaliSayi.sayi.Add(s);
+                if (tamSayi.Check(s)) tamSayi.sayi.Add(s);
+            }
+
+            if (!logMode)
+            {
+                Console.WriteLine("Toplam Satır Adedi: " + girdiAdedi);
+                Console.WriteLine($"Geçerli Sayi Adedi: {tamSayi.sayi.Count + noktaliSayi.sayi.Count}" + 
+                    $"(%{100*(tamSayi.sayi.Count + noktaliSayi.sayi.Count)/girdiAdedi})");
+                Console.WriteLine($"Geçersiz Satır Adedi: {girdiAdedi - tamSayi.sayi.Count + noktaliSayi.sayi.Count}" +
+                    $"(%{100 - (100 * (tamSayi.sayi.Count + noktaliSayi.sayi.Count) / girdiAdedi)})");
+            }
             Log("Program " + DateTime.Now.ToString() + " Tarihinde Sonlandı\n-----------------------------------------\n");
             Console.WriteLine("Program Bitti Çıkmak İçin Enter'e Basınız");
             Console.ReadLine();
