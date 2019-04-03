@@ -18,17 +18,7 @@ namespace DosyadakiHakikat
             int girdiAdedi = 0;
             TamSayi tamSayi = new TamSayi();
             NoktaliSayi noktaliSayi = new NoktaliSayi();
-
-            void Log(string mesaj)
-            {
-                if (!logMode)
-                {
-                    StreamWriter sw = File.AppendText("log.txt");
-                    sw.WriteLine(mesaj);
-                    sw.Flush();
-                    sw.Close();
-                }
-            }
+            Log log = new Log();
 
             if (args.Length > 0)
             {
@@ -43,7 +33,7 @@ namespace DosyadakiHakikat
                 }
             }
             else dosyaAdi = null;
-            Log("Dosyadaki Hakikat V1.0 " + DateTime.Now.ToString() + " Tarihinde Başladı");
+            log.Başla();
 
             // Geçerli bir dosya adı alana kadar dosya adı iste
             do
@@ -52,23 +42,23 @@ namespace DosyadakiHakikat
                 {
                     sr = File.OpenText(dosyaAdi);
                     dosyaGecerliMi = true;
-                    Log(DateTime.Now + " tarihinde " + dosyaAdi + " isimli dosya başarıyla açıldı.");
+                    log.Kaydet(DateTime.Now + " tarihinde " + dosyaAdi + " isimli dosya başarıyla açıldı.");
                 }
                 catch (FileNotFoundException )
                 {
-                    Log(DateTime.Now + " tarihinde " + dosyaAdi + " dosya adı ile FileNotFoundException gerçekleşti.");
+                    log.Kaydet(DateTime.Now + " tarihinde " + dosyaAdi + " dosya adı ile FileNotFoundException gerçekleşti.");
                     Console.WriteLine("Dosya Adı Giriniz:");
                     dosyaAdi = Console.ReadLine();
                 }
                 catch (ArgumentNullException)
                 {
-                    Log(DateTime.Now + " tarihinde " + dosyaAdi + " dosya adı ile ArgumentNullException gerçekleşti.");
+                    log.Kaydet(DateTime.Now + " tarihinde " + dosyaAdi + " dosya adı ile ArgumentNullException gerçekleşti.");
                     Console.WriteLine("Dosya Adı Giriniz:");
                     dosyaAdi = Console.ReadLine();
                 }
                 catch (ArgumentException)
                 {
-                    Log(DateTime.Now + " tarihinde " + dosyaAdi + " dosya adı ile ArgumentException gerçekleşti.");
+                    log.Kaydet(DateTime.Now + " tarihinde " + dosyaAdi + " dosya adı ile ArgumentException gerçekleşti.");
                     Console.WriteLine("Dosya Adı Giriniz:");
                     dosyaAdi = Console.ReadLine();
                 }
@@ -107,7 +97,7 @@ namespace DosyadakiHakikat
                 Console.WriteLine($"Geçersiz Satır Adedi: {girdiAdedi - tamSayi.adet - noktaliSayi.adet }" +
                     $"(%{100 - (100 * (tamSayi.adet + noktaliSayi.adet ) / girdiAdedi)})");
             }
-            Log("Program " + DateTime.Now.ToString() + " Tarihinde Sonlandı\n-----------------------------------------\n");
+            log.Bitir();
             Console.WriteLine("Program Bitti Çıkmak İçin Enter'e Basınız");
             Console.ReadLine();
         }
