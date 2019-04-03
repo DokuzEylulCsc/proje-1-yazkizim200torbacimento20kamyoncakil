@@ -8,7 +8,20 @@ namespace DosyadakiHakikat
 {
     class NoktaliSayi : Sayi
     {
-        protected override List<string> sayi { get; set; } = new List<string>();
+        private double deger;
+        protected override List<Sayi> sayi { get; set; } = new List<Sayi>();
+
+        public override double Değer
+        {
+            get
+            {
+                return deger;
+            }
+            set
+            {
+                deger = value;
+            }
+        }
 
         public override int adet
         {
@@ -18,7 +31,7 @@ namespace DosyadakiHakikat
             }
         }
 
-        public override void Ekle(string gelen)
+        public override void Ekle(Sayi gelen)
         {
             sayi.Add(gelen);
         }

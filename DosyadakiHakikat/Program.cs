@@ -85,8 +85,18 @@ namespace DosyadakiHakikat
             while (!logMode && (s = sr.ReadLine()) != null)
             {
                 girdiAdedi++;
-                if (noktaliSayi.Check(s)) noktaliSayi.Ekle(s);
-                if (tamSayi.Check(s)) tamSayi.Ekle(s);
+                if (noktaliSayi.Check(s))
+                {
+                    NoktaliSayi temp = new NoktaliSayi();
+                    temp.Değer = Convert.ToDouble(s);
+                    noktaliSayi.Ekle(temp);
+                }
+                else if (tamSayi.Check(s))
+                {
+                    TamSayi temp = new TamSayi();
+                    temp.Değer = Convert.ToInt32(s);
+                    tamSayi.Ekle(temp);
+                }
             }
 
             if (!logMode)
