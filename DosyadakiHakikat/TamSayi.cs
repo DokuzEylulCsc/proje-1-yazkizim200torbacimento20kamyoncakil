@@ -31,6 +31,16 @@ namespace DosyadakiHakikat
             }
         }
 
+        public TamSayi[] getArray()
+        {
+            TamSayi [] temp = new TamSayi[sayi.Count];
+            for (int i = 0; i < sayi.Count; i++)
+            {
+                temp[i] = (TamSayi)sayi[i];
+            }
+            return temp;
+        }
+
         public override void Ekle(Sayi gelen)
         {
             sayi.Add(gelen);

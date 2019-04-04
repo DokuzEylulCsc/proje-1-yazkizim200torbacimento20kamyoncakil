@@ -13,8 +13,8 @@ namespace DosyadakiHakikat
         {
             StreamReader sr;
             bool dosyaGecerliMi = false;
-            bool logMode = false;
             string dosyaAdi;
+            string s;
             int girdiAdedi = 0;
             TamSayi tamSayi = new TamSayi();
             NoktaliSayi noktaliSayi = new NoktaliSayi();
@@ -25,7 +25,7 @@ namespace DosyadakiHakikat
                 if (args[0] == "-L")
                 {
                     dosyaAdi = args.Length > 1 ? args[1] : null;
-                    logMode = true;
+                    log.LogMode = true;
                 }
                 else
                 {
@@ -68,11 +68,10 @@ namespace DosyadakiHakikat
             sr = File.OpenText(dosyaAdi);
 
             //Logun Ekrana Yazdırılması
-            string s;
-            while (logMode && (s = sr.ReadLine()) != null) Console.WriteLine(s);
+            while (log.LogMode && (s = sr.ReadLine()) != null) Console.WriteLine(s);
 
 
-            while (!logMode && (s = sr.ReadLine()) != null)
+            while (!log.LogMode && (s = sr.ReadLine()) != null)
             {
                 girdiAdedi++;
                 if (noktaliSayi.Check(s))
@@ -88,8 +87,17 @@ namespace DosyadakiHakikat
                     tamSayi.Ekle(temp);
                 }
             }
+            if (!log.LogMode)
+            {
+                IntSort intSort1 = new IntSort(tamSayi.getArray());
+                IntSort intSort2 = new IntSort(noktaliSayi.getArray());
+                Console.WriteLine("Sıralanmış Tam Sayi Arrayi");
+                intSort1.PrintSortedArray();
+                Console.WriteLine("Sıralanmış Noktali Sayi Arrayi");
+                intSort2.PrintSortedArray();
+            }
 
-            if (!logMode)
+            if (!log.LogMode)
             {
                 Console.WriteLine("Toplam Satır Adedi: " + girdiAdedi);
                 Console.WriteLine($"Geçerli Sayi Adedi: {tamSayi.adet + noktaliSayi.adet}" + 
