@@ -58,6 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DosyaKontrol.cs" />
+    <Compile Include="DosyaOkuma.cs" />
     <Compile Include="IntSort.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="NoktaliSayi.cs" />
