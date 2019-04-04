@@ -8,8 +8,8 @@ namespace DosyadakiHakikat
 {
     class IntSort
     {
-        private Sayi[] array;
-        private Sayi temp;
+        private readonly Sayi[] array;
+        private readonly Sayi temp;
         public IntSort(TamSayi[] gelenArray)
         {
             temp = new TamSayi();
